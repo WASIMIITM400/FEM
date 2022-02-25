@@ -1,6 +1,5 @@
-#connectivity
+# connectivity
 string1 = '$Elements'
-# yodleyo
 # opening a text file
 file = open("assignment_star.msh", "r")
 
@@ -14,7 +13,6 @@ for line in file:
 
     # checking string is present in line or not
     if string1 in line:
-
         flag = 1
         break
 
@@ -24,20 +22,19 @@ if flag == 0:
 else:
     print('String', string1, 'Found In Line', index)
 
-
-#num = int(file.readline())  # number of lines to read for Physical Names
-#print(num)
+# num = int(file.readline())  # number of lines to read for Physical Names
+# print(num)
 num = int(file.readline())  # number of lines to read for elements
-connectivity = {} # Initialising an empty dictionary
+connectivity = {}  # Initialising an empty dictionary
 for j in range(num):
-                k = file.readline().split()
-                print(k)
-                if int(k[1])==1:
-                    connectivity.update({int(k[0]): [int(k[-2]),int(k[-1])]})  # Updating the dictionary
-                elif int(k[1])==2:
-                    connectivity.update({int(k[0]): [int(k[-3]),int(k[-2]), int(k[-1])]})  # Updating the dictionary
-                elif int(k[1])==3:
-                    connectivity.update({int(k[0]): [int(k[-4]),int(k[-3]), int(k[-2]), int(k[-1])]})  # Updating the dictionary
-                else:
-                    print("higher oreder elements found")
+    k = file.readline().split()
+    print(k)
+    if int(k[1]) == 1:
+        connectivity.update({int(k[0]): [int(k[-2]), int(k[-1])]})  # Updating the dictionary
+    elif int(k[1]) == 2:
+        connectivity.update({int(k[0]): [int(k[-3]), int(k[-2]), int(k[-1])]})  # Updating the dictionary
+    elif int(k[1]) == 3:
+        connectivity.update({int(k[0]): [int(k[-4]), int(k[-3]), int(k[-2]), int(k[-1])]})  # Updating the dictionary
+    else:
+        print("higher oreder elements found")
 print(connectivity)
