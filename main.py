@@ -1,6 +1,6 @@
 #connectivity
 string1 = '$Elements'
-
+# yodleyo
 # opening a text file
 file = open("assignment_star.msh", "r")
 
